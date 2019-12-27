@@ -1,0 +1,13 @@
+{
+  "author": "Alonso Roque A.",
+  "name": "css-grid-workshop",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "browser-sync start --server --files '**/*.css, **/*.html, **/*.js, !node_modules/**/*' --directory --port 9999"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.26.7"
+  }
+}
