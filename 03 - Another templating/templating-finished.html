@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../assets/style.css">
+  <title>Grid templating</title>
+</head>
+
+<style>
+    /* Solution 1 */
+    /* .grid-container {
+        display: grid;
+        grid-template: repeat(6, 1fr) / repeat(12, 1fr);
+    }
+    .grid-container .header {
+        grid-column: 1 / -1;
+        grid-row: 1 / 2;
+    }
+    .grid-container .navbar {
+        grid-column: 1 / 2;
+        grid-row: 2 / -1;
+    }
+    .grid-container .content {
+        grid-column: 2 / -1;
+        grid-row: 2 / -2;
+    }
+    .grid-container .footer {
+        grid-column: 2 / -1;
+        grid-row: -1 / -2
+    }
+    .grid-container .meta {
+        grid-column: -3 / -1;
+        grid-row: 2 / 4;
+    } */
+    /******************** 
+    *** Named lines 
+    ********************/
+    /* .grid-container {
+        display: grid;
+        grid-template-rows: repeat(6, 1fr);
+        grid-template-columns: repeat(2, 1fr) [navbar-end content-start] repeat(10, 1fr);
+    }
+    .grid-container .header {
+        grid-column: 1 / -1;
+        grid-row: 1 / 2;
+    }
+    .grid-container .navbar {
+        grid-column: 1 / navbar-end;
+        grid-row: 2 / -1;
+    }
+    .grid-container .content {
+        grid-column: content-start / -1;
+        grid-row: 2 / -2;
+    }
+    .grid-container .footer {
+        grid-column: content-start / -1;
+        grid-row: -1 / -2
+    }
+    .grid-container .meta {
+        grid-column: -3 / -1;
+        grid-row: 2 / 4;
+    } */
+    /* Exercise: header-row-end / content-row-start */
+    /******************** 
+    *** Template areas 
+    ********************/
+    .grid-container {
+        display: grid;
+        grid-template-areas: 
+            'h h h h h h h h h h h h'
+            'n n c c c c c c c c c c'
+            'n n c c c c c c c c c c'
+            'n n c c c c c c c c c c'
+            'n n c c c c c c c c c c'
+            'n n f f f f f f f f f f';
+    }
+    .grid-container .header {
+        grid-area: h;
+    }
+    .grid-container .navbar {
+        grid-area: n;
+    }
+    .grid-container .content {
+        grid-area: c;
+    }
+    .grid-container .footer {
+        grid-area: f;
+    }
+    .grid-container .meta {
+        grid-column: -3 / -1;
+        grid-row: 2 / 4;
+    }
+</style>
+
+<body>
+    <h1>CSS Grid Templating</h1>
+    <div class="grid-container">
+        <div class="grid-item header">Header</div>
+        <div class="grid-item content">Content</div>
+        <div class="grid-item navbar">Navbar</div>
+        <div class="grid-item meta">Meta</div>
+        <div class="grid-item footer">Footer</div>
+    </div>
+</body>
+
+</html>
