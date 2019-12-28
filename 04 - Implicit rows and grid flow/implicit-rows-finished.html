@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../assets/style.css">
+  <title>Implicit rows & grid flow</title>
+</head>
+
+<style>
+    .grid-container {
+        display: grid;
+        gap: 10px;
+        grid-template-columns: repeat(3, minmax(100px, 1fr));
+        grid-template-rows: 80px;
+        /* Implicit rows */
+        /* grid-auto-rows: 100px; */
+        /* grid-auto-columns: 150px; */
+        /* grid-auto-flow: column; */
+    }
+    .grid-container .grid-item:nth-child(2) {
+        grid-row: span 2;
+    }
+    .grid-container .grid-item:nth-child(3) {
+        grid-column: span 3;
+    }    
+</style>
+
+<body>
+    <h1>CSS Grid - Implicit rows & grid flow</h1>
+    <div class="grid-container">
+        <div class="grid-item">Grid item 1</div>
+        <div class="grid-item">Grid item 2</div>
+        <div class="grid-item">Grid item 3</div>
+        <div class="grid-item">Grid item 4</div>
+        <div class="grid-item">Grid item 5</div>
+        <div class="grid-item">Grid item 6</div>
+        <div class="grid-item"></div>
+    </div>
+</body>
+
+</html>
