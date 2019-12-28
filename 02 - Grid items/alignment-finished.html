@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../assets/style.css">
+  <title>Grid items</title>
+</head>
+
+<style>
+    .grid-container {
+        display: grid;
+        grid-template-columns: 200px 200px 200px;
+        grid-template-rows: 120px 120px 120px;
+        grid-gap: 10px;
+        font-family: 'Lato';
+        text-align: center;
+        font-size: 1.4em;
+        margin: 40px 30px;
+        /* justify-items: center; */
+        /* align-items: center; */
+    }
+    .grid-item {
+        padding: 20px 40px;
+        font-size: 1.5em;
+        border: 1px solid black;
+    }    
+    /******************** 
+    *** Align along the row axis
+    ********************/
+    .a, .b, .c {
+        background: orange;
+        justify-self: start;
+    }
+    .d, .e, .f {
+        background: violet;
+        justify-self: center;
+    }
+    .g, .h, .i {
+        background: lightgreen;
+        justify-self: end;
+    }
+    .j, .k, .l {
+        background: cornflowerblue;
+        justify-self: stretch;
+    }    
+    /******************** 
+    *** Align along the column axis
+    ********************/
+    /* .a, .b, .c {
+        background: orange;
+        align-self: start;
+    }
+    .d, .e, .f {
+        background: violet;
+        align-self: center;
+    }
+    .g, .h, .i {
+        background: lightgreen;
+        align-self: end;
+    }
+    .j, .k, .l {
+        background: cornflowerblue;
+        align-self: stretch;
+    }     */
+</style>
+
+<body>
+    <h1>CSS Grid Items</h1>
+    <div class="grid-container">
+        <div class="grid-item a">A</div>
+        <div class="grid-item b">B</div>
+        <div class="grid-item c">C</div>
+        <div class="grid-item d">D</div>
+        <div class="grid-item e">E</div>
+        <div class="grid-item f">F</div>
+        <div class="grid-item g">G</div>
+        <div class="grid-item h">H</div>
+        <div class="grid-item i">I</div>
+        <div class="grid-item j">J</div>
+        <div class="grid-item k">K</div>
+        <div class="grid-item l">L</div>
+    </div>
+</body>
+
+</html>
