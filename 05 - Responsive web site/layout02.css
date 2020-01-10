@@ -66,6 +66,7 @@ img {
 }
 
 #btn-menu-list {
+    display: none;
 }
 
 /** FEATURES */
