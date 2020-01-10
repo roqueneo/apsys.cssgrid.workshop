@@ -1,0 +1,118 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #E9ECF4;
+    color: black;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+.layout {
+    width: 90%;
+    max-width: 1000px;
+    margin: 20px auto;
+    display: grid;
+    gap: 10px;
+    grid-template: repeat(4, auto) / 1fr repeat(2, 2fr);
+    /** Solution 2 */
+    grid-template-areas: 
+        "header header header"
+        "sidebar content content"
+        "sidebar widget1 widget2"
+        "footer footer footer";
+}
+
+.layout .header,
+.layout .content,
+.layout .sidebar,
+.layout .footer,
+.layout > div {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.layout .header {
+    background-color: #12203E;
+    color: white;
+    /** Solution 1 */
+    /* grid-column: 1 / -1;     */
+    /** Solution 2 */
+    grid-area: header;
+}
+
+.layout .content {
+    /** Solution 1 */
+    /* grid-column: 2 / -1; */
+    /** Solution 2 */
+    grid-area: content;
+}
+
+.layout .sidebar {
+    background-color: #FAA43D;
+    /** Solution 1 */
+    /* grid-row: span 2; */
+    /** Solution 2 */
+    grid-area: sidebar;
+
+    /* Using css grid */
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    /* Using flexbox */
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+}
+
+.layout .widget-1, 
+.layout .widget-2 {
+    background-color: #55A8FD;
+    color: white;
+    height: 100px;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+
+.layout .widget-1 {
+    grid-area: widget1;
+}
+
+.layout .widget-2 {
+    grid-area: widget2;
+}
+
+.layout .footer {
+    background-color: #12203E;
+    color: white;
+    /** Solution 1 */
+    /* grid-column: 1 / -1; */
+    /** Solution 2 */
+    grid-area: footer;
+}
+
+@media screen and (max-width: 700px) {
+    /** Solution 1 */
+    /* .layout .content {
+        grid-column: 1 / -1;
+    }
+    .layout .sidebar {
+        grid-column: 1 / -1;
+    }
+    .layout .widget-1 {
+        grid-column: span 2;
+    } */
+    /** Solution 2 */
+    .layout {
+        grid-template-areas: 
+            "header header header"
+            "sidebar sidebar sidebar"
+            "content content content"
+            "widget1 widget1 widget2"
+            "footer footer footer";
+    }
+}
