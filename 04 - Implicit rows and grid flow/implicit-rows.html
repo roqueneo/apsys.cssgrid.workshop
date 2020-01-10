@@ -12,25 +12,28 @@
     .grid-container {
         display: grid;
         gap: 10px;
-        grid-template-columns: repeat(3, minmax(100px, 1fr));
+        grid-template-columns: repeat(auto-fit, 100px);
         grid-template-rows: 80px;
     }
-    .grid-container .grid-item:nth-child(2) {
-        grid-row: span 2;
+    /* .item-1 {
+        order: 1;
     }
-    .grid-container .grid-item:nth-child(3) {
-        grid-column: span 3;
+    .item-2 {
+        order: -1;
     }
+    .item-5 {
+        order: -5;
+    } */
 </style>
 
 <body>
     <h1>CSS Grid - Implicit rows & grid flow</h1>
     <div class="grid-container">
-        <div class="grid-item">1</div>
-        <div class="grid-item">2</div>
+        <div class="grid-item item-1">1</div>
+        <div class="grid-item item-2">2</div>
         <div class="grid-item">3</div>
         <div class="grid-item">4</div>
-        <div class="grid-item">5</div>
+        <div class="grid-item item-5">5</div>
         <div class="grid-item">6</div>
     </div>
 </body>
